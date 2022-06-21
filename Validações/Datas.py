@@ -5,7 +5,7 @@ class DatasBr:
         self.cadastro = datetime.today()
 
     def __str__(self):
-        return self.format()
+        return f'{self.format()}\nTempo de cadastro: {self.tempo_cadastro()}'
 
     def dia(self):
         dia = str(self.cadastro.day)
@@ -35,3 +35,7 @@ class DatasBr:
     def format(self):
         formato = self.cadastro.strftime('%d/%m/%Y %H:%M')
         return formato
+
+    def tempo_cadastro(self):
+        tempo_cadastro = (datetime.today() + timedelta(days=15, minutes=20, seconds=30)) - self.cadastro
+        return tempo_cadastro

@@ -1,7 +1,9 @@
-from Datas import DatasBr
+import requests
+from CEP import BuscaEndereço
 
-cadastro = DatasBr()
+cep = '01001000'
+objeto_cep = BuscaEndereço(cep)
 
-print(cadastro)
+bairro, localidade, uf = objeto_cep.acesso()
 
-
+print(bairro, localidade)
